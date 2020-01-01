@@ -12,18 +12,26 @@ class Header extends React.Component {
     return (
       <div className="headerContainer">
         <div
-          className={projectClass + " headerItem"}
+          className="headerItem"
           style={{ gridColumnStart: 4, gridColumnEnd: 5 }}
-          onClick={() => this.props.selectPage("projects")}
         >
-          <Link to="/projects">PROJECTS</Link>
+          <p
+            className={projectClass}
+            onClick={() => this.props.selectPage("projects")}
+          >
+            <Link to="/projects">PROJECTS</Link>
+          </p>
         </div>
         <div
-          className={aboutClass + " headerItem"}
+          className="headerItem"
           style={{ gridColumnStart: 5, gridColumnEnd: 6 }}
-          onClick={() => this.props.selectPage("about")}
         >
-          <Link to="/about">ABOUT + CONTACT</Link>
+          <p
+            className={aboutClass + " wrapper"}
+            onClick={() => this.props.selectPage("about")}
+          >
+            <Link to="/about">ABOUT + CONTACT</Link>
+          </p>
         </div>
       </div>
     );

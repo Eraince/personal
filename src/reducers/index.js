@@ -23,7 +23,7 @@ const detailReducer = (selectedProject = null, action) => {
   return selectedProject;
 };
 
-const pageReducer = (page = "projects", action) => {
+const pageReducer = (page = "", action) => {
   if (action.type === "PAGE_SELECTED") {
     return action.payload;
   }
