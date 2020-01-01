@@ -1,0 +1,67 @@
+.aboutContainer {
+  width: 100vw;
+  height: 70vh;
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: 10% 1fr 1fr 1fr 1fr 10%;
+  grid-template-rows: repeat(7, 1fr);
+  grid-template-areas:
+    ". name cn cnName portrait ."
+    ". name en enName portrait ."
+    ". title job job portrait ."
+    ". about brief brief contact ."
+    ". about brief brief contact ."
+    ". about brief brief contact ."
+    ". favorite quote quote contact .";
+}
+.name {
+  grid-area: name;
+}
+.cn {
+  grid-area: cn;
+}
+.en {
+  grid-area: en;
+}
+.cnName {
+  grid-area: cnName;
+}
+.enName {
+  grid-area: enName;
+}
+.title {
+  grid-area: title;
+}
+.job {
+  grid-area: job;
+}
+.portrait {
+  grid-area: portrait;
+}
+.about {
+  grid-area: about;
+}
+.brief {
+  grid-area: brief;
+}
+.contact {
+  width: 99.7%;
+  padding: 0;
+  grid-area: contact;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 1px;
+}
+.favorite {
+  grid-area: favorite;
+}
+.quote {
+  grid-area: quote;
+}
+.gridItem {
+  outline: 1px solid black;
+  text-align: center;
+  justify-self: stretch;
+  padding: 5%;
+}

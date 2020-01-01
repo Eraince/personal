@@ -1,0 +1,15 @@
+.footerContainer {
+  width: 100vw;
+  height: 8vh;
+  display: grid;
+  grid-template-columns: 10% 1fr 1fr 1fr 1fr 10%;
+  margin-top: 2%;
+}
+
+.footer {
+  padding: 5%;
+  align-self: center;
+  text-align: center;
+  justify-self: stretch;
+  border: 0.5px solid black;
+}
