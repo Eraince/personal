@@ -37,6 +37,7 @@
 }
 .portrait {
   grid-area: portrait;
+  outline: 1px solid black;
 }
 .about {
   grid-area: about;
@@ -64,4 +65,8 @@
   text-align: center;
   justify-self: stretch;
   padding: 5%;
+}
+
+.bold {
+  font-weight: bold;
 }

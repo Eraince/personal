@@ -4,6 +4,11 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 class ProjectDetail extends React.Component {
+  constructor(props) {
+    super(props);
+    this.canvasRef = React.createRef();
+  }
+
   render() {
     return (
       <div>
