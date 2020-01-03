@@ -62,7 +62,7 @@
 }
 .gridItem {
   outline: 1px solid black;
-  text-align: center;
+  text-align: left;
   justify-self: stretch;
   padding: 5%;
 }

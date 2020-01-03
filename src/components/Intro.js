@@ -50,6 +50,7 @@ class Intro extends React.Component {
         <div className="cnName gridItem">王培羽</div>
         <div className="en gridItem">English</div>
         <div className="enName gridItem">Eraince Wang</div>
+
         {/* portrait renderer */}
         <div className="portrait" ref={this.canvasRef}></div>
         {/* ------------------------------------- */}
@@ -64,7 +65,7 @@ class Intro extends React.Component {
           approach to creating inspiring and sincere experiences. FYI, I’m
           addicted to humor and broccoli.
         </div>
-        <div className="favorite gridItem bold">Favorite Quote</div>
+        <div className="favorite gridItem bold"></div>
         <div className="quote gridItem">
           “We carry our homes within us which enables us to fly.”
         </div>
@@ -76,7 +77,9 @@ class Intro extends React.Component {
             Contact
           </div>
           <div className="gridItem">
-            <a href="mailto: peiyu.wang@newschool.edu">email</a>
+            <a href="mailto: peiyu.wang@newschool.edu">
+              peiyu.wang@newschool.edu
+            </a>
           </div>
 
           <div className="gridItem">

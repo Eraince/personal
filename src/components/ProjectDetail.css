@@ -1,0 +1,78 @@
+.detailContainer {
+  width: 100vw;
+  height: 70vh;
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: 10% 1fr 1fr 1fr 1fr 10%;
+  grid-template-rows: repeat(9, 1fr);
+  grid-template-areas:
+    "return pname name visual visual ."
+    ". word keys visual visual ."
+    ". shortDescription intro visual visual ."
+    ". diagram diagram  visual visual ."
+    ". diagram diagram visual visual ."
+    ".  diagram diagram col collaborator ."
+    ". diagram diagram time date ."
+    ".  diagram diagram goal goal ."
+    ". github link goal goal .";
+}
+.return {
+  grid-area: return;
+}
+.pname {
+  grid-area: pname;
+}
+.name {
+  grid-area: name;
+}
+.visual {
+  grid-area: visual;
+}
+.col {
+  grid-area: col;
+}
+.collaborator {
+  grid-area: collaborator;
+}
+.time {
+  grid-area: time;
+}
+.date {
+  grid-area: date;
+}
+.shortDescription {
+  grid-area: shortDescription;
+}
+.intro {
+  grid-area: intro;
+}
+.word {
+  grid-area: word;
+}
+.keys {
+  grid-area: keys;
+}
+.diagram {
+  grid-area: diagram;
+}
+.pics {
+  grid-area: pics;
+}
+.goal {
+  grid-area: goal;
+}
+.goalDetail {
+  grid-area: goalDetail;
+}
+.github {
+  grid-area: github;
+}
+.link {
+  grid-area: link;
+}
+.detail {
+  grid-area: detail;
+}
+.detailLink {
+  grid-area: detailLink;
+}

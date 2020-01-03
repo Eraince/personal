@@ -19,7 +19,7 @@ class Header extends React.Component {
             className={projectClass}
             onClick={() => this.props.selectPage("projects")}
           >
-            <Link to="/projects">PROJECTS</Link>
+            <Link to="/projects">Projects</Link>
           </p>
         </div>
         <div
@@ -30,7 +30,7 @@ class Header extends React.Component {
             className={aboutClass + " wrapper"}
             onClick={() => this.props.selectPage("about")}
           >
-            <Link to="/about">ABOUT + CONTACT</Link>
+            <Link to="/about">About + Contact</Link>
           </p>
         </div>
       </div>
