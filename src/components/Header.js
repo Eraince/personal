@@ -38,8 +38,12 @@ class Header extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  return { selectedPage: state.selectedPage };
+const mapStateToProps = (state, props) => {
+  var location = window.location.pathname.slice(1);
+  if (location.includes("project")) {
+    location = "projects";
+  }
+  return { selectedPage: location };
 };
 
 export default connect(mapStateToProps, { selectPage })(Header);

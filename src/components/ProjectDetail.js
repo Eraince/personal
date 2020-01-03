@@ -44,8 +44,16 @@ class ProjectDetail extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  return { selected: state.selectedProject };
+const mapStateToProps = (state, props) => {
+  var selectedProject;
+  var projectName = props.location.pathname.slice(9).toLowerCase();
+  Object.entries(state.projects).forEach(([key, value]) => {
+    if (key === projectName) {
+      selectedProject = value;
+    }
+  });
+
+  return { selected: selectedProject };
 };
 
 export default connect(mapStateToProps)(ProjectDetail);

@@ -7,7 +7,7 @@ import "./ProjectList.css";
 
 class ProjectList extends React.Component {
   renderList() {
-    return this.props.projects.map(project => {
+    return Object.values(this.props.projects).map(project => {
       return (
         <div
           className="projectRow"
@@ -24,7 +24,7 @@ class ProjectList extends React.Component {
             className="gridItem"
             onClick={() => this.props.selectProject(project)}
           >
-            <Link to="/project">
+            <Link to={`/project/${project.title}`}>
               <div>{project.title}</div>
             </Link>
           </div>

@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
 
 const projectsReducer = (projects = {}) => {
-  return [
-    {
+  return {
+    bandollective: {
       thumbnail:
         "https://firebasestorage.googleapis.com/v0/b/eraincecom.appspot.com/o/bandollective-crop.jpg?alt=media&token=e8c642fd-642e-465f-a2f2-c001f3c3ae2a",
       title: "Bandollective",
@@ -15,7 +15,7 @@ const projectsReducer = (projects = {}) => {
       github: "",
       detail: ""
     },
-    {
+    cubi: {
       thumbnail:
         "https://firebasestorage.googleapis.com/v0/b/eraincecom.appspot.com/o/Screen%20Shot%202020-01-01%20at%204.24.38%20PM.png?alt=media&token=f13ef32e-5a93-44f4-a616-5b9e9a8d57dc",
       title: "Cubi",
@@ -28,16 +28,16 @@ const projectsReducer = (projects = {}) => {
       github: "",
       detail: ""
     }
-  ];
+  };
 };
 
-const detailReducer = (selectedProject = null, action) => {
-  if (action.type === "PROJECT_SELECTED") {
-    return action.payload;
-  }
+// const detailReducer = (selectedProject = null, action) => {
+//   if (action.type === "PROJECT_SELECTED") {
+//     return action.payload;
+//   }
 
-  return selectedProject;
-};
+//   return selectedProject;
+// };
 
 const pageReducer = (page = "", action) => {
   if (action.type === "PAGE_SELECTED") {
@@ -48,6 +48,5 @@ const pageReducer = (page = "", action) => {
 
 export default combineReducers({
   projects: projectsReducer,
-  selectedProject: detailReducer,
   selectedPage: pageReducer
 });
