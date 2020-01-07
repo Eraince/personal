@@ -25,7 +25,7 @@ class Intro extends React.Component {
     var renderer = new THREE.WebGLRenderer();
     renderer.setSize(
       this.canvasRef.current.clientWidth,
-      this.canvasRef.current.clientHeight
+      this.canvasRef.current.clientHeight - 5
     );
 
     this.canvasRef.current.appendChild(renderer.domElement);

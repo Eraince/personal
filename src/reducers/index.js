@@ -9,6 +9,8 @@ const projectsReducer = (projects = {}) => {
       collaborator: "None",
       date: "01/05/2019",
       brief: "A network-based collective band performance",
+      visual:
+        "https://firebasestorage.googleapis.com/v0/b/eraincecom.appspot.com/o/cubiGif.gif?alt=media&token=00d22bcc-a4db-4f71-bc66-3ce7234ea7df",
       keywords: "Tone.js, Node.js, Socket.io",
       diagram: "",
       goal: "",
@@ -22,6 +24,8 @@ const projectsReducer = (projects = {}) => {
       collaborator: "Lan Zhang",
       date: "10/05/2019",
       brief: "A unity music player and visualizer.",
+      visual:
+        "https://firebasestorage.googleapis.com/v0/b/eraincecom.appspot.com/o/cubiGif.gif?alt=media&token=00d22bcc-a4db-4f71-bc66-3ce7234ea7df",
       keywords: "Unity",
       diagram: "",
       goal: "",

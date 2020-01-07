@@ -21,7 +21,13 @@ class ProjectDetail extends React.Component {
         <div className="pname gridItem">Project Name</div>
 
         <div className="name gridItem">{this.props.selected.title}</div>
-        <div className="visual gridItem">Visual</div>
+        <div className="visual gridItem">
+          <img
+            src={this.props.selected.visual}
+            alt="visual"
+            style={{ width: 500 }}
+          />
+        </div>
         <div className="col gridItem">Collaborator</div>
         <div className="collaborator gridItem">
           {this.props.selected.collaborator}

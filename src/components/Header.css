@@ -5,12 +5,12 @@
   grid-template-columns: 10% 1fr 1fr 1fr 1fr 10%;
   margin-bottom: 2%;
 }
-.headerItem:nth-child(1) {
+.headerItem:nth-child(2) {
   border-left: 0.5px solid black;
   border-top: 0.5px solid black;
   border-bottom: 0.5px solid black;
 }
-.headerItem:nth-child(2) {
+.headerItem:nth-child(3) {
   border: 0.5px solid black;
 }
 

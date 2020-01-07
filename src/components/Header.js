@@ -11,6 +11,13 @@ class Header extends React.Component {
     const aboutClass = selected === "about" ? "active" : "";
     return (
       <div className="headerContainer">
+        <div style={{ gridColumnStart: 2, gridColumnEnd: 3 }}>
+          <img
+            src="icon.png"
+            alt="icon"
+            style={{ width: 60, textAlign: `center` }}
+          />
+        </div>
         <div
           className="headerItem"
           style={{ gridColumnStart: 4, gridColumnEnd: 5 }}
@@ -40,7 +47,7 @@ class Header extends React.Component {
 
 const mapStateToProps = (state, props) => {
   var location = window.location.pathname.slice(1);
-  if (location.includes("project")) {
+  if (location.includes("project") || location === "") {
     location = "projects";
   }
   return { selectedPage: location };
