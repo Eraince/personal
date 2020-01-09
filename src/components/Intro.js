@@ -83,13 +83,31 @@ class Intro extends React.Component {
           </div>
 
           <div className="gridItem">
-            <a href="https://github.com/Eraince">github</a>
+            <a
+              href="https://github.com/Eraince"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              github
+            </a>
           </div>
           <div className="gridItem">
-            <a href="https://www.linkedin.com/in/peiyu-wang/">LinkedIn</a>
+            <a
+              href="https://www.linkedin.com/in/peiyu-wang/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
           </div>
           <div className="gridItem">
-            <a href="https://medium.com/@wangp701">medium</a>
+            <a
+              href="https://medium.com/@wangp701"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              medium
+            </a>
           </div>
         </div>
       </div>

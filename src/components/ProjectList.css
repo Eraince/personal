@@ -17,3 +17,7 @@
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 1px;
 }
+.thumbnail img {
+  width: 80%;
+  padding-left: 10%;
+}

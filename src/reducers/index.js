@@ -9,13 +9,14 @@ const projectsReducer = (projects = {}) => {
       collaborator: "None",
       date: "01/05/2019",
       brief: "A network-based collective band performance",
-      visual:
-        "https://firebasestorage.googleapis.com/v0/b/eraincecom.appspot.com/o/cubiGif.gif?alt=media&token=00d22bcc-a4db-4f71-bc66-3ce7234ea7df",
+      visual: "",
+      video: "https://player.vimeo.com/video/383433776",
       keywords: "Tone.js, Node.js, Socket.io",
       diagram: "",
-      goal: "",
-      github: "",
-      detail: ""
+      goal:
+        "Being inspired by the modern and digitalized lifestyle people are living where individuals are gradually disconnected from the environment, Bandollective is designed to provide the trigger/platform to initiate connections among people and also among people and the physical environment.Detailed documentation is  ",
+      github: "https://github.com/Eraince/net-music",
+      detailLink: ""
     },
     cubi: {
       thumbnail:
@@ -28,20 +29,13 @@ const projectsReducer = (projects = {}) => {
         "https://firebasestorage.googleapis.com/v0/b/eraincecom.appspot.com/o/cubiGif.gif?alt=media&token=00d22bcc-a4db-4f71-bc66-3ce7234ea7df",
       keywords: "Unity",
       diagram: "",
-      goal: "",
+      goal:
+        "To explore 3d music visualizer, Cubi is aiming to create a fun and interactive experience as a music player. The customization of how the cubes are positioned and colored is trying to provide a stage-like performance where cubes are acting as dancers.The actual experience can be found ",
       github: "",
-      detail: ""
+      detailLink: ""
     }
   };
 };
-
-// const detailReducer = (selectedProject = null, action) => {
-//   if (action.type === "PROJECT_SELECTED") {
-//     return action.payload;
-//   }
-
-//   return selectedProject;
-// };
 
 const pageReducer = (page = "", action) => {
   if (action.type === "PAGE_SELECTED") {

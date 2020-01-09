@@ -76,3 +76,13 @@
 .detailLink {
   grid-area: detailLink;
 }
+
+iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.visual img {
+  width: 80%;
+  padding-left: 10%;
+}

@@ -13,11 +13,11 @@ class ProjectList extends React.Component {
           className="projectRow"
           style={{ gridColumnStart: 2, gridColumnEnd: 6 }}
         >
-          <div className="gridItem">
+          <div className="gridItem thumbnail">
             <img
               src={project.thumbnail}
               alt="thumbnail"
-              style={{ width: 200 }}
+              // style={{ width: 200 }}
             />
           </div>
           <div
