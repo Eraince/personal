@@ -12,7 +12,7 @@
     ". about brief brief contact ."
     ". about brief brief contact ."
     ". about brief brief contact ."
-    ". favorite quote quote contact .";
+    ". favorite quote quote resume .";
 }
 .name {
   grid-area: name;
@@ -59,6 +59,16 @@
 }
 .quote {
   grid-area: quote;
+}
+
+.resume {
+  grid-area: resume;
+  width: 99.7%;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 1fr;
+  grid-gap: 1px;
 }
 .gridItem {
   outline: 1px solid black;
