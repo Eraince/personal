@@ -39,15 +39,6 @@ class Intro extends React.Component {
   addThree = () => {
     document.addEventListener("mousemove", this.onMousemove, false);
 
-    // loader.load("resources/images/wall.jpg", texture => {
-    //   const material = new THREE.MeshBasicMaterial({
-    //     map: texture
-    //   });
-    //   const cube = new THREE.Mesh(geometry, material);
-    //   scene.add(cube);
-    //   cubes.push(cube); // add to our list of cubes to rotate
-    // });
-
     var sceneBackground = new THREE.Color(1, 1, 1);
     var scene = new THREE.Scene();
     scene.background = sceneBackground;
@@ -182,33 +173,32 @@ class Intro extends React.Component {
 
     // suglasses
 
-    const loader = new THREE.TextureLoader();
-    loader.load("white-heart.png", texture => {
-      texture.wrapS = THREE.RepeatWrapping;
-      texture.wrapT = THREE.RepeatWrapping;
-      texture.magFilter = THREE.NearestFilter;
-      // texture.repeat.set(8, 8);
-      var glassLeft = new THREE.Mesh(
-        new THREE.BoxBufferGeometry(50, 50, 1),
-        new THREE.MeshPhongMaterial({
-          color: 0xffffff,
-          map: texture
-        })
-      );
-      glassLeft.position.set(-4, 1, 6);
-      this.sunglasses.push(glassLeft);
-      scene.add(glassLeft);
-    });
-    // var glassLeft = new THREE.Mesh(
-    //   new THREE.BoxBufferGeometry(6, 2.5, 1),
-    //   new THREE.MeshBasicMaterial({
-    //     // color: 0x000000,
-    //     map: texture
-    //   })
-    // );
-    // glassLeft.position.set(-4, 1, 6);
-    // this.sunglasses.push(glassLeft);
-    // scene.add(glassLeft);
+    // const loader = new THREE.TextureLoader();
+    // loader.load("icon.png", texture => {
+    //   texture.wrapS = THREE.RepeatWrapping;
+    //   texture.wrapT = THREE.RepeatWrapping;
+    //   texture.magFilter = THREE.NearestFilter;
+    //   // texture.repeat.set(8, 8);
+    //   var glassLeft = new THREE.Mesh(
+    //     new THREE.BoxBufferGeometry(50, 50, 1),
+    //     new THREE.MeshPhongMaterial({
+    //       color: 0xffffff,
+    //       map: texture
+    //     })
+    //   );
+    //   glassLeft.position.set(-4, 1, 6);
+    //   this.sunglasses.push(glassLeft);
+    //   scene.add(glassLeft);
+    // });
+    var glassLeft = new THREE.Mesh(
+      new THREE.BoxBufferGeometry(6, 2.5, 1),
+      new THREE.MeshBasicMaterial({
+        color: 0x000000
+      })
+    );
+    glassLeft.position.set(-4, 1, 6);
+    this.sunglasses.push(glassLeft);
+    scene.add(glassLeft);
 
     var glassRight = new THREE.Mesh(
       new THREE.BoxBufferGeometry(6, 2.5, 1),
