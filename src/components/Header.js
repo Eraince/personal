@@ -12,11 +12,11 @@ class Header extends React.Component {
     return (
       <div className="headerContainer">
         <div style={{ gridColumnStart: 2, gridColumnEnd: 3 }}>
-          <img
+          {/* <img
             src="icon.png"
             alt="icon"
             style={{ width: 60, textAlign: `center` }}
-          />
+          /> */}
         </div>
         <div
           className="headerItem"

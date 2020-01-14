@@ -7,10 +7,8 @@ class Intro extends React.Component {
   constructor(props) {
     super(props);
     this.canvasRef = React.createRef();
-    this.contactRef = React.createRef();
-    this.blankRef = React.createRef();
-    this.mouseX = 0;
-    this.mouseY = 0;
+    // this.contactRef = React.createRef();
+    // this.blankRef = React.createRef();
     this.sunglasses = [];
   }
 
@@ -18,29 +16,72 @@ class Intro extends React.Component {
     this.addThree();
   }
 
-  onMousemove = e => {
-    this.mouseX = e.clientX;
-    this.mouseY = e.clientY;
-
-    var top = this.contactRef.current.offsetTop;
-    var left = this.contactRef.current.offsetLeft;
-    var bottom = top + this.contactRef.current.offsetHeight;
-    var right = left + this.contactRef.current.offsetWidth;
-
-    if (
-      this.mouseX >= left &&
-      this.mouseX <= right &&
-      this.mouseY >= top &&
-      this.mouseY <= bottom
-    ) {
-      //console.log("here");
-    }
-  };
   addThree = () => {
-    document.addEventListener("mousemove", this.onMousemove, false);
+    // shader-------------
+    const vshader = `
+varying vec2 vUv;
+void main() {	
+  vUv = uv;
+  gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+}
+`;
+    const fshader = `
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+uniform float u_time;
 
+varying vec2 vUv;
+
+// 2D Random
+float random (vec2 st, float seed) {
+    return fract(sin(dot(st, vec2(12.9898,78.233)))
+                 * 43758.5453123 + seed);
+}
+
+// 2D Noise based on Morgan McGuire @morgan3d
+// https://www.shadertoy.com/view/4dS3Wd
+float noise (vec2 st) {
+    vec2 i = floor(st);
+    vec2 f = fract(st);
+    float seed = u_time;
+
+    // Four corners in 2D of a tile
+    float a = random(i, seed);
+    float b = random(i + vec2(1.0, 0.0), seed);
+    float c = random(i + vec2(0.0, 1.0), seed);
+    float d = random(i + vec2(1.0, 1.0),seed);
+
+    // Smooth Interpolation
+
+    // Cubic Hermine Curve.  Same as SmoothStep()
+    vec2 u = f*f*(3.0-2.0*f);
+    // u = smoothstep(0.,1.,f);
+
+    // Mix 4 coorners percentages
+    return mix(a, b, u.x) +
+            (c - a)* u.y * (1.0 - u.x) +
+            (d - b) * u.x * u.y;
+}
+
+void main() {
+    vec2 st = vUv;
+
+    // Scale the coordinate system to see
+    // some noise in action
+    vec2 pos = vec2(st*5.0);
+
+    // Use the noise function
+    float n = noise(pos);
+    n = smoothstep(0.1, 0.5, n);
+
+    gl_FragColor = vec4(vec3(1.0-n), 1.0);
+}
+`;
+
+    // -------------------
     var sceneBackground = new THREE.Color(1, 1, 1);
     var scene = new THREE.Scene();
+    const clock = new THREE.Clock();
     scene.background = sceneBackground;
     var camera = new THREE.PerspectiveCamera(
       45,
@@ -48,7 +89,7 @@ class Intro extends React.Component {
       0.1,
       1000
     );
-    camera.position.z = 40;
+    camera.position.z = 35;
     camera.position.y = 6;
     camera.lookAt(scene);
     var renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -173,42 +214,42 @@ class Intro extends React.Component {
 
     // suglasses
 
-    // const loader = new THREE.TextureLoader();
-    // loader.load("icon.png", texture => {
-    //   texture.wrapS = THREE.RepeatWrapping;
-    //   texture.wrapT = THREE.RepeatWrapping;
-    //   texture.magFilter = THREE.NearestFilter;
-    //   // texture.repeat.set(8, 8);
-    //   var glassLeft = new THREE.Mesh(
-    //     new THREE.BoxBufferGeometry(50, 50, 1),
-    //     new THREE.MeshPhongMaterial({
-    //       color: 0xffffff,
-    //       map: texture
-    //     })
-    //   );
-    //   glassLeft.position.set(-4, 1, 6);
-    //   this.sunglasses.push(glassLeft);
-    //   scene.add(glassLeft);
-    // });
-    var glassLeft = new THREE.Mesh(
-      new THREE.BoxBufferGeometry(6, 2.5, 1),
+    var glass = new THREE.Mesh(
+      new THREE.BoxBufferGeometry(3, 0.5, 1),
       new THREE.MeshBasicMaterial({
         color: 0x000000
       })
     );
-    glassLeft.position.set(-4, 1, 6);
+    glass.position.set(0, 1, 6);
+    this.sunglasses.push(glass);
+    scene.add(glass);
+
+    const planeGeo = new THREE.PlaneGeometry(6, 3);
+    const uniforms = {
+      u_color_a: { value: new THREE.Color(0xff0000) },
+      u_color_b: { value: new THREE.Color(0x00ffff) },
+      u_time: { value: 0.0 },
+      u_mouse: { value: { x: 0.0, y: 0.0 } },
+      u_resolution: { value: { x: 0, y: 0 } }
+    };
+
+    const planeMaterial = new THREE.ShaderMaterial({
+      uniforms: uniforms,
+      vertexShader: vshader,
+      fragmentShader: fshader
+    });
+
+    const glassLeft = new THREE.Mesh(planeGeo, planeMaterial);
+    glassLeft.position.set(-4, 1, 7);
     this.sunglasses.push(glassLeft);
     scene.add(glassLeft);
 
-    var glassRight = new THREE.Mesh(
-      new THREE.BoxBufferGeometry(6, 2.5, 1),
-      new THREE.MeshPhongMaterial({
-        color: 0x000000
-      })
-    );
-    glassRight.position.set(4, 1, 6);
+    var glassRight = new THREE.Mesh(planeGeo, planeMaterial);
+    glassRight.position.set(4, 1, 7);
     this.sunglasses.push(glassRight);
     scene.add(glassRight);
+
+    // --------------------
 
     // --------mouth------
 
@@ -236,6 +277,7 @@ class Intro extends React.Component {
     var animate = function() {
       requestAnimationFrame(animate);
       renderer.render(scene, camera);
+      uniforms.u_time.value += clock.getDelta() * 0.3;
     };
     animate();
   };
@@ -262,12 +304,12 @@ class Intro extends React.Component {
           approach to creating inspiring and sincere experiences. FYI, I’m
           addicted to humor and broccoli.
         </div>
-        <div className="favorite gridItem bold" ref={this.blankRef}></div>
+        <div className="favorite gridItem bold"></div>
         <div className="quote gridItem">
           “Care(for self, others, and the world) can be structured into the
           design of tools and eqiupment through 'presencing'.”
         </div>
-        <div className="contact" ref={this.contactRef}>
+        <div className="contact">
           <div
             className="gridItem bold"
             style={{ gridRowStart: 1, gridRowEnd: 5 }}

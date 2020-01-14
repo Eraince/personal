@@ -67,7 +67,7 @@ class ProjectDetail extends React.Component {
           {this.props.selected.goal}
           <a
             href={this.props.selected.detailLink}
-            style={{ color: "red" }}
+            style={{ color: "#137309" }}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -81,7 +81,7 @@ class ProjectDetail extends React.Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {this.props.selected.github}{" "}
+            {this.props.selected.github}
           </a>
         </div>
       </div>
