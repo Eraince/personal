@@ -3,7 +3,7 @@
   height: 8vh;
   display: grid;
   grid-template-columns: 10% 1fr 1fr 1fr 1fr 10%;
-  margin-bottom: 2%;
+  margin-bottom: 1%;
 }
 .headerItem:nth-child(2) {
   border-left: 0.5px solid black;

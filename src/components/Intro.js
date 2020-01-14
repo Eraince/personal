@@ -68,11 +68,11 @@ void main() {
 
     // Scale the coordinate system to see
     // some noise in action
-    vec2 pos = vec2(st*5.0);
+    vec2 pos = vec2(st*1.0);
 
     // Use the noise function
     float n = noise(pos);
-    n = smoothstep(0.1, 0.5, n);
+    n = smoothstep(0.1, 0.6, n);
 
     gl_FragColor = vec4(vec3(1.0-n), 1.0);
 }
@@ -277,7 +277,7 @@ void main() {
     var animate = function() {
       requestAnimationFrame(animate);
       renderer.render(scene, camera);
-      uniforms.u_time.value += clock.getDelta() * 0.3;
+      uniforms.u_time.value += clock.getDelta() * 0.4;
     };
     animate();
   };
