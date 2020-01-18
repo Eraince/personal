@@ -7,13 +7,14 @@ class Intro extends React.Component {
   constructor(props) {
     super(props);
     this.canvasRef = React.createRef();
-    // this.contactRef = React.createRef();
-    // this.blankRef = React.createRef();
+
     this.sunglasses = [];
   }
 
   componentDidMount() {
-    this.addThree();
+    if (window.innerWidth > 700) {
+      this.addThree();
+    }
   }
 
   addThree = () => {

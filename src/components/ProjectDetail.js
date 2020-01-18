@@ -14,11 +14,7 @@ class ProjectDetail extends React.Component {
     if (project.visual !== "") {
       return (
         <div className="visual gridItem">
-          <img
-            src={this.props.selected.visual}
-            alt="visual"
-            // style={{ width: 500 }}
-          />
+          <img src={this.props.selected.visual} alt="visual" />
         </div>
       );
     } else {
@@ -46,7 +42,7 @@ class ProjectDetail extends React.Component {
         </div>
         <div className="pname gridItem">Project Name</div>
 
-        <div className="name gridItem">{this.props.selected.title}</div>
+        <div className="projectTitle gridItem">{this.props.selected.title}</div>
 
         {this.renderVisual(this.props.selected)}
         <div className="col gridItem">Collaborator</div>
@@ -60,8 +56,10 @@ class ProjectDetail extends React.Component {
 
         <div className="word gridItem">Technical Keywords</div>
         <div className="keys gridItem">{this.props.selected.keywords}</div>
-        <div className="diagram gridItem">Technical Diagram</div>
-        <div className="pics gridItem">{this.props.selected.diagram}</div>
+        <div className="diagram gridItem">
+          <img src={this.props.selected.diagram} alt="visual" />
+        </div>
+        {/* <div className="pics gridItem">{this.props.selected.diagram}</div> */}
 
         <div className="goal gridItem">
           {this.props.selected.goal}
@@ -91,9 +89,9 @@ class ProjectDetail extends React.Component {
 
 const mapStateToProps = (state, props) => {
   var selectedProject;
-  var projectName = props.location.pathname.slice(9).toLowerCase();
+  var projectName = props.location.pathname.slice(9);
   Object.entries(state.projects).forEach(([key, value]) => {
-    if (key === projectName) {
+    if (value.title === projectName) {
       selectedProject = value;
     }
   });
@@ -102,6 +100,3 @@ const mapStateToProps = (state, props) => {
 };
 
 export default connect(mapStateToProps)(ProjectDetail);
-
-/* <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/383433776" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-<p><a href="https://vimeo.com/383433776">Bandollective - A network-based collective band performance</a> from <a href="https://vimeo.com/user89153756">Eraince</a></p> */

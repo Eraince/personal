@@ -11,17 +11,14 @@ class Header extends React.Component {
     const aboutClass = selected === "about" ? "active" : "";
     return (
       <div className="headerContainer">
-        <div style={{ gridColumnStart: 2, gridColumnEnd: 3 }}>
-          {/* <img
+        {/* <div style={{ gridColumnStart: 2, gridColumnEnd: 3 }}>
+          <img
             src="icon.png"
             alt="icon"
             style={{ width: 60, textAlign: `center` }}
-          /> */}
-        </div>
-        <div
-          className="headerItem"
-          style={{ gridColumnStart: 4, gridColumnEnd: 5 }}
-        >
+          />
+        </div> */}
+        <div className="headerItem">
           <p
             className={projectClass}
             onClick={() => this.props.selectPage("projects")}
@@ -29,10 +26,7 @@ class Header extends React.Component {
             <Link to="/projects">Projects</Link>
           </p>
         </div>
-        <div
-          className="headerItem"
-          style={{ gridColumnStart: 5, gridColumnEnd: 6 }}
-        >
+        <div className="headerItem">
           <p
             className={aboutClass + " wrapper"}
             onClick={() => this.props.selectPage("about")}

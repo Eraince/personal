@@ -1,29 +1,11 @@
-.detailContainer {
-  width: 100vw;
-  height: 78vh;
-  display: grid;
-  grid-gap: 1px;
-  grid-template-columns: 10% 1fr 1fr 1fr 1fr 10%;
-  grid-template-rows: repeat(9, 1fr);
-  grid-template-areas:
-    "return pname name visual visual ."
-    ". word keys visual visual ."
-    ". shortDescription intro visual visual ."
-    ". diagram diagram  visual visual ."
-    ". diagram diagram visual visual ."
-    ".  diagram diagram col collaborator ."
-    ". diagram diagram time date ."
-    ".  diagram diagram goal goal ."
-    ". github link goal goal .";
-}
 .return {
   grid-area: return;
 }
 .pname {
   grid-area: pname;
 }
-.name {
-  grid-area: name;
+.projectTitle {
+  grid-area: projectTitle;
 }
 .visual {
   grid-area: visual;
@@ -85,4 +67,61 @@ iframe {
 .visual img {
   width: 80%;
   padding-left: 10%;
+}
+.diagram img {
+  width: 90%;
+  padding-left: 5%;
+}
+
+.detailContainer {
+  width: 100vw;
+  height: auto;
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: repeat(16, 1fr);
+  grid-template-areas:
+    "pname projectTitle"
+    "word keys"
+    "shortDescription intro"
+    "visual visual"
+    "visual visual"
+    "visual visual"
+    "visual visual"
+    "diagram diagram"
+    "diagram diagram"
+    "diagram diagram"
+    "diagram diagram"
+    "github link"
+    "col collaborator"
+    "time date"
+    "goal goal"
+    "goal goal";
+}
+.return {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .detailContainer {
+    width: 100vw;
+    height: 78vh;
+    display: grid;
+    grid-gap: 1px;
+    grid-template-columns: 10% 1fr 1fr 1fr 1fr 10%;
+    grid-template-rows: repeat(9, 1fr);
+    grid-template-areas:
+      "return pname projectTitle visual visual ."
+      ". word keys visual visual ."
+      ". shortDescription intro visual visual ."
+      ". diagram diagram  visual visual ."
+      ". diagram diagram visual visual ."
+      ".  diagram diagram col collaborator ."
+      ". diagram diagram time date ."
+      ".  diagram diagram goal goal ."
+      ". github link goal goal .";
+  }
+  .return {
+    display: block;
+  }
 }

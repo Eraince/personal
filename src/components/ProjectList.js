@@ -9,16 +9,9 @@ class ProjectList extends React.Component {
   renderList() {
     return Object.values(this.props.projects).map(project => {
       return (
-        <div
-          className="projectRow"
-          style={{ gridColumnStart: 2, gridColumnEnd: 6 }}
-        >
+        <div className="projectRow">
           <div className="gridItem thumbnail">
-            <img
-              src={project.thumbnail}
-              alt="thumbnail"
-              // style={{ width: 200 }}
-            />
+            <img src={project.thumbnail} alt="thumbnail" />
           </div>
           <div
             className="gridItem"
@@ -41,9 +34,7 @@ class ProjectList extends React.Component {
   render() {
     return (
       <div className="listContainer">
-        <div className="gridItem key" style={{ gridColumnStart: 2 }}>
-          Thumbnail
-        </div>
+        <div className="gridItem key pic">Thumbnail</div>
         <div className="gridItem key">Project Name</div>
         <div className="gridItem key">Brief</div>
         <div className="gridItem key">Technical Keywords</div>
