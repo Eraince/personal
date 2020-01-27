@@ -17,7 +17,8 @@ const projectsReducer = (projects = {}) => {
       goal:
         "Being inspired by the modern and digitalized lifestyle people are living where individuals are gradually disconnected from the environment, Bandollective is designed to provide the trigger/platform to initiate connections among people and also among people and the physical environment.Detailed documentation is  ",
       github: "https://github.com/Eraince/net-music",
-      detailLink: ""
+      detailLink:
+        "https://drive.google.com/file/d/1LY1_ET11_Zydv_mL76_sZwiBmnsC9SoX/view?usp=sharing"
     },
     singletruth: {
       thumbnail:
@@ -43,15 +44,15 @@ const projectsReducer = (projects = {}) => {
       collaborator: "Lan Zhang",
       date: "05/10/2019",
       brief: "A unity music player and visualizer.",
-      visual:
-        "https://firebasestorage.googleapis.com/v0/b/eraincecom.appspot.com/o/cubiGif.gif?alt=media&token=00d22bcc-a4db-4f71-bc66-3ce7234ea7df",
+      visual: "",
+      video: "https://player.vimeo.com/video/387348247",
       keywords: "Unity",
       diagram:
         "https://firebasestorage.googleapis.com/v0/b/eraincecom.appspot.com/o/cubi-diagram.png?alt=media&token=74f40312-a72b-4065-a73a-fab6bac20f65",
       goal:
-        "To explore 3d music visualizer, Cubi is aiming to create a fun and interactive experience as a music player. The customization of how the cubes are positioned and colored is trying to provide a stage-like performance where cubes are acting as dancers.The actual experience can be found ",
+        "To explore 3d music visualizer, Cubi is aiming to create a fun and interactive experience as a music player. The customization of how the cubes are positioned and colored is trying to provide a stage-like performance where cubes are acting as dancers.The project detail can be found ",
       github: "https://github.com/Eraince/Cubi",
-      detailLink: ""
+      detailLink: "https://github.com/Eraince/Cubi"
     },
     firebaseDorkshop: {
       thumbnail:

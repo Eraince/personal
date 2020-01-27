@@ -27,20 +27,23 @@ p {
     width: 100vw;
     height: 8vh;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 5% 1fr 1fr 5%;
     margin-bottom: 1%;
   }
   .headerItem:nth-child(1) {
     border-left: 0.5px solid black;
     border-top: 0.5px solid black;
     border-bottom: 0.5px solid black;
-    grid-column-start: 1;
-    grid-column-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
   }
   .headerItem:nth-child(2) {
     border: 0.5px solid black;
-    grid-column-start: 2;
-    grid-column-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 4;
+  }
+  p {
+    font-size: 0.8em;
   }
 }
 
@@ -63,5 +66,8 @@ p {
     border: 0.5px solid black;
     grid-column-start: 5;
     grid-column-end: 6;
+  }
+  p {
+    font-size: 1em;
   }
 }

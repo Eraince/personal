@@ -352,8 +352,16 @@ void main() {
           </div>
         </div>
         <div className="resume">
-          <div className="gridItem bold">Resume</div>
-          <div className="gridItem"></div>
+          <div className="gridItem bold">More</div>
+          <div className="gridItem">
+            <a
+              href="https://drive.google.com/file/d/1RZ0AzPZk4DojVNEqvmluMYerbN2zohWB/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              resume
+            </a>
+          </div>
         </div>
       </div>
     );

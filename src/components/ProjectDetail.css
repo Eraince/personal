@@ -78,25 +78,26 @@ iframe {
   height: auto;
   display: grid;
   grid-gap: 1px;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 5% 1fr 1fr 5%;
   grid-template-rows: repeat(16, 1fr);
   grid-template-areas:
-    "pname projectTitle"
-    "word keys"
-    "shortDescription intro"
-    "visual visual"
-    "visual visual"
-    "visual visual"
-    "visual visual"
-    "diagram diagram"
-    "diagram diagram"
-    "diagram diagram"
-    "diagram diagram"
-    "github link"
-    "col collaborator"
-    "time date"
-    "goal goal"
-    "goal goal";
+    ". pname projectTitle ."
+    ". word keys ."
+    ". shortDescription intro ."
+    ". visual visual ."
+    ". visual visual ."
+    ". visual visual ."
+    ". visual visual ."
+    ". diagram diagram ."
+    ". diagram diagram ."
+    ". diagram diagram ."
+    ". diagram diagram ."
+    ". github link ."
+    ". col collaborator ."
+    ". time date ."
+    ". goal goal ."
+    ". goal goal .";
+  font-size: 0.8em;
 }
 .return {
   display: none;
@@ -105,7 +106,7 @@ iframe {
 @media only screen and (min-width: 768px) {
   .detailContainer {
     width: 100vw;
-    height: 78vh;
+    height: auto;
     display: grid;
     grid-gap: 1px;
     grid-template-columns: 10% 1fr 1fr 1fr 1fr 10%;
@@ -120,6 +121,7 @@ iframe {
       ". diagram diagram time date ."
       ".  diagram diagram goal goal ."
       ". github link goal goal .";
+    font-size: 1em;
   }
   .return {
     display: block;

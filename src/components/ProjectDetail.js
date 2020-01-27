@@ -59,7 +59,6 @@ class ProjectDetail extends React.Component {
         <div className="diagram gridItem">
           <img src={this.props.selected.diagram} alt="visual" />
         </div>
-        {/* <div className="pics gridItem">{this.props.selected.diagram}</div> */}
 
         <div className="goal gridItem">
           {this.props.selected.goal}

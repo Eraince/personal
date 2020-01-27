@@ -1,20 +1,21 @@
 @media only screen and (min-width: 300px) {
   .footerContainer {
     width: 100vw;
-    height: 8vh;
+    height: 5vh;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 5% 1fr 1fr 5%;
     margin-top: 1%;
   }
 
   .footer {
-    padding: 5%;
+    padding: 3%;
     align-self: center;
     text-align: center;
     justify-self: stretch;
     border: 0.5px solid black;
-    grid-column-start: 2;
-    grid-column-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    font-size: 0.8em;
   }
 }
 
@@ -35,5 +36,6 @@
     border: 0.5px solid black;
     grid-column-start: 5;
     grid-column-end: 6;
+    font-size: 1em;
   }
 }
