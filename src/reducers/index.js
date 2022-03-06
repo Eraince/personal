@@ -2,6 +2,61 @@ import { combineReducers } from "redux";
 
 const projectsReducer = (projects = {}) => {
   return {
+    nfo: {
+      thumbnail:
+          "https://firebasestorage.googleapis.com/v0/b/eraincecom.appspot.com/o/bandollective-crop.jpg?alt=media&token=e8c642fd-642e-465f-a2f2-c001f3c3ae2a",
+      title: "NFO for Oreo",
+      collaborator: "cocafe",
+      date: "10/15/2021",
+      brief: "A network-based collective band performance",
+      visual: "",
+      video: "https://player.vimeo.com/video/383433776",
+      keywords: "React.js",
+      diagram:
+          "https://firebasestorage.googleapis.com/v0/b/eraincecom.appspot.com/o/bandollective-diagram.png?alt=media&token=1145b787-500c-49c7-86f8-1b1d40adbf72",
+      goal:
+          "Being inspired by the modern and digitalized lifestyle people are living where individuals are gradually disconnected from the environment, Bandollective is designed to provide the trigger/platform to initiate connections among people and also among people and the physical environment.Detailed documentation is  ",
+      github: "",
+      detailLink:
+          "https://nfo.cocafe.co/home"
+    },
+    artecho: {
+      thumbnail:
+          "https://firebasestorage.googleapis.com/v0/b/eraincecom.appspot.com/o/bandollective-crop.jpg?alt=media&token=e8c642fd-642e-465f-a2f2-c001f3c3ae2a",
+      title: "ArtEcho",
+      collaborator: "Jerry Tan, Lan Zhang, John Roach, Thomas Tajo, Benny Zhang",
+      date: "05/01/2019",
+      brief: "A network-based collective band performance",
+      visual: "",
+      video: "https://player.vimeo.com/video/383433776",
+      keywords: "React.js, Three.js",
+      diagram:
+          "https://firebasestorage.googleapis.com/v0/b/eraincecom.appspot.com/o/bandollective-diagram.png?alt=media&token=1145b787-500c-49c7-86f8-1b1d40adbf72",
+      goal:
+          "Being inspired by the modern and digitalized lifestyle people are living where individuals are gradually disconnected from the environment, Bandollective is designed to provide the trigger/platform to initiate connections among people and also among people and the physical environment.Detailed documentation is  ",
+      github: "https://github.com/Eraince/net-music",
+      detailLink:
+          "https://asoa.cooperhewitt.org/artecho/"
+    },
+    unite: {
+      thumbnail:
+          "https://firebasestorage.googleapis.com/v0/b/eraincecom.appspot.com/o/bandollective-crop.jpg?alt=media&token=e8c642fd-642e-465f-a2f2-c001f3c3ae2a",
+      title: "Unite! Digital Voyagers",
+      collaborator: "Lan Zhang",
+      date: "05/01/2019",
+      brief: "A network-based collective band performance",
+      visual: "",
+      video: "https://player.vimeo.com/video/383433776",
+      keywords: "Vue.js, Nuxt.js",
+      diagram:
+          "https://firebasestorage.googleapis.com/v0/b/eraincecom.appspot.com/o/bandollective-diagram.png?alt=media&token=1145b787-500c-49c7-86f8-1b1d40adbf72",
+      goal:
+          "Being inspired by the modern and digitalized lifestyle people are living where individuals are gradually disconnected from the environment, Bandollective is designed to provide the trigger/platform to initiate connections among people and also among people and the physical environment.Detailed documentation is  ",
+      github: "https://github.com/Eraince/net-music",
+      detailLink:
+          "http://47.100.198.93/"
+    },
+
     bandollective: {
       thumbnail:
         "https://firebasestorage.googleapis.com/v0/b/eraincecom.appspot.com/o/bandollective-crop.jpg?alt=media&token=e8c642fd-642e-465f-a2f2-c001f3c3ae2a",
