@@ -10,7 +10,7 @@ const projectsReducer = (projects = {}) => {
       date: "10/15/2021",
       brief: "A network-based collective band performance",
       visual: "",
-      video: "https://player.vimeo.com/video/383433776",
+      video: "https://player.vimeo.com/video/685294048",
       keywords: "React.js",
       diagram:
           "https://firebasestorage.googleapis.com/v0/b/eraincecom.appspot.com/o/bandollective-diagram.png?alt=media&token=1145b787-500c-49c7-86f8-1b1d40adbf72",
