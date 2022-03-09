@@ -8,7 +8,7 @@ const projectsReducer = (projects = {}) => {
       title: "NFO for Oreo",
       collaborator: "cocafe",
       date: "10/15/2021",
-      brief: "A network-based collective band performance",
+      brief: "A generated NFT project",
       visual: "",
       video: "https://player.vimeo.com/video/685294048",
       keywords: "React.js",
